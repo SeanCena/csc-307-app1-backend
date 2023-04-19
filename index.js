@@ -68,7 +68,7 @@ app.post('/users', (req, res) => {
     if (!("id" in userToAdd))
         userToAdd["id"] = uuidv4();  // generate random id
     addUser(userToAdd);
-    res.status(201).end();
+    res.status(201).send(userToAdd);
 });
 
 app.get('/users/:id', (req, res) => {
